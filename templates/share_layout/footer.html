@@ -1,0 +1,48 @@
+<footer id="colophon" role="contentinfo">
+    <div class="site-info" style="text-align: center">
+        Copyright&copy;&nbsp;{{ CURRENT_YEAR }}&nbsp;
+        <a href="/" target="blank">{{ SITE_NAME }}</a>
+        &nbsp;|&nbsp;
+
+        <a href="/sitemap.xml" title="SiteMap" target="_blank">
+            SiteMap
+        </a>
+        &nbsp;|&nbsp;
+        <a href="/links.html" title="友情链接" rel="nofollow" target="_blank">
+            友情链接
+        </a>
+     
+
+        |&nbsp;
+        <a href="https://tongji.baidu.com/sc-web/3478620/home/ico?siteId=11261596" target="_blank"
+           rel="nofollow">百度统计</a>
+        {% comment %}{% include 'share_layout/analyticscode.html' %}{% endcomment %}
+
+    </div>
+    <div class="site-info" style="text-align: center">
+        Powered by
+        <a href="https://www.djangoproject.com/" rel="nofollow" target="blank">Django</a>
+        &nbsp;|&nbsp;
+        
+        <a href="https://www.agpg.online" target="blank">AGPg</a>
+        |
+        本页面加载耗时:<!!LOAD_TIMES!!>s
+    </div>
+    {% if BEIAN_CODE %}
+        <div class="site-info" style="text-align: center">
+            <a href="http://www.miitbeian.gov.cn/" rel="nofollow" target="_blank">
+                <p style=" height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">
+                    {{ BEIAN_CODE }}
+                </p>
+            </a>
+            {% if BEIAN_CODE_GONGAN and SHOW_GONGAN_CODE %}
+                {{ BEIAN_CODE_GONGAN |safe }}
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if ANALYTICS_CODE %}
+        {{ ANALYTICS_CODE| safe }}
+    {% endif %}
+</footer><!-- #colophon -->
+
+
